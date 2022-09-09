@@ -37,7 +37,7 @@ Insertion sort is sorted in mobile device
 ---
 # Features
 * Responsive 
-* Can adjust speed while
+* Can adjust speed while sorting
 * Other buttons and sliders are disabled while sorting
 
 ---
