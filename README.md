@@ -22,7 +22,7 @@ This project is created with:
 ---
 
 # Library 
-This project uses Bootstrap5 for responsive nabvar. 
+This project uses Bootstrap5 for responsive navbar. 
 
 ---
 
