@@ -66,10 +66,10 @@ function enable(){
 
 
 //setting speed from range
-var delay = 45;
+var delay = 180;
 var speed = document.getElementById("speed");
 speed.addEventListener("input",function(){
-    delay = (75 - parseInt(speed.value))  //subtracting to maintain speed range well feasible...
+    delay = (310 - parseInt(speed.value))  //subtracting to maintain speed range well feasible...
     //console.log(delay)
 });
 
@@ -151,7 +151,39 @@ async function quickSort(){
 }
 
 async function selectionSort(){
-    console.log("selection sort is sorted")
+    var stuff = document.getElementsByClassName("bar");
+    var l = stuff.length;
+    document.getElementById("SubmitAlgorithm").innerHTML = "Sorting.."
+    disable();
+    for (let i=0; i<l; i++){
+        let minPosition = i;
+        stuff[i].style.background = "yellow";
+        for (let j=i+1; j<l; j++){
+            stuff[j].style.background = "blue";
+            await sleep(delay);
+            console.log(minPosition);
+            if (parseInt(stuff[j].style.height) < parseInt(stuff[minPosition].style.height)){
+                if (minPosition !== i){
+                    stuff[minPosition].style.background = "skyblue";
+                }
+                minPosition = j;
+                stuff[j].style.background = "red";
+            }
+            else{
+                stuff[j].style.background="skyblue";
+            }
+        }
+        await sleep(delay);
+        let temp = stuff[i].style.height;
+        stuff[i].style.height = stuff[minPosition].style.height;
+        stuff[minPosition].style.height = temp;
+
+        stuff[minPosition].style.background = "skyblue";
+        stuff[i].style.background = "green";
+    }
+
+    document.getElementById("SubmitAlgorithm").innerHTML = "Sort"
+    enable();
 }
 
 algorithmSelect = document.getElementById("algorithms")
@@ -178,7 +210,7 @@ SubmitAlgorithm.addEventListener("click",function(){
             alert("Not completed yet");
             break;
         case "Selection sort":
-            alert("Not completed yet ");
+            selectionSort();
             break;
         default:
             bubbleSort();
