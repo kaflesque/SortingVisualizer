@@ -70,7 +70,7 @@ function enable(){
 
 
 //setting speed from range
-var delay = 180;
+var delay = 178;
 var speed = document.getElementById("speed");
 speed.addEventListener("input",function(){
     delay = (310 - parseInt(speed.value))  //subtracting to maintain speed range well feasible...
@@ -129,7 +129,7 @@ async function insertionsort(){
         stuff[i].style.background = "blue";
         await sleep(delay);
         while ( j >= 0 && parseInt(stuff[j].style.height)>parseInt(current)){
-            stuff[j].style.background = "blue";
+            stuff[j].style.background = "orange";
             stuff[j+1].style.height = stuff[j].style.height;
             j--;
             
