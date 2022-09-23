@@ -151,10 +151,6 @@ async function mergeSort(){
     console.log("merge sort is sorted")
 }
 
-//quick sort
-
-let low = 0;
-let high = stuff.length-1
 
 //selection sort
 async function selectionSort(){
