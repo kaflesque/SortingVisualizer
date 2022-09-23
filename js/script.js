@@ -1,7 +1,11 @@
 
 //popup
+disable();
+document.getElementById("speed").disabled = true;
 document.querySelector("#popup").addEventListener("click",function(){
     document.querySelector(".popup").style.display = "none"
+    enable();
+    document.getElementById("speed").disabled = false;
 })
 
 //Array stuff
@@ -146,10 +150,13 @@ async function insertionsort(){
 async function mergeSort(){
     console.log("merge sort is sorted")
 }
-async function quickSort(){
-    console.log("quick sort is sorted")
-}
 
+//quick sort
+
+let low = 0;
+let high = stuff.length-1
+
+//selection sort
 async function selectionSort(){
     var stuff = document.getElementsByClassName("bar");
     var l = stuff.length;
@@ -161,7 +168,6 @@ async function selectionSort(){
         for (let j=i+1; j<l; j++){
             stuff[j].style.background = "blue";
             await sleep(delay);
-            console.log(minPosition);
             if (parseInt(stuff[j].style.height) < parseInt(stuff[minPosition].style.height)){
                 if (minPosition !== i){
                     stuff[minPosition].style.background = "skyblue";
@@ -191,11 +197,31 @@ algorithmSelect = document.getElementById("algorithms")
 let selected=""
 algorithmSelect.addEventListener("change",function(){
     selected = algorithmSelect.options[algorithmSelect.selectedIndex].text;
-    console.log("selected inside",selected);
+    switch(selected){
+        case "Bubble sort":
+            document.querySelector("#bubble-sort-index").style.display = "flex";
+            document.querySelector("#insertion-sort-index").style.display = "none";
+            document.querySelector("#selection-sort-index").style.display = "none";
+        case "Insertion sort":
+            document.querySelector("#bubble-sort-index").style.display = "none";
+            document.querySelector("#insertion-sort-index").style.display = "flex";
+            document.querySelector("#selection-sort-index").style.display = "none";
+            break;
+        case "Selection sort":
+            document.querySelector("#selection-sort-index").style.display = "flex";
+            document.querySelector("#bubble-sort-index").style.display = "none";
+            document.querySelector("#insertion-sort-index").style.display = "none";
+            break;
+        default:
+            document.querySelector("#bubble-sort-index").style.display = "flex";
+            document.querySelector("#insertion-sort-index").style.display = "none";
+            document.querySelector("#selection-sort-index").style.display = "none";
+            break;
+    }
 })
 
 SubmitAlgorithm.addEventListener("click",function(){
-    console.log("selected:",selected)
+    //console.log("selected:",selected)
     switch(selected){
         case "Bubble sort":
             bubbleSort();
@@ -214,10 +240,12 @@ SubmitAlgorithm.addEventListener("click",function(){
             break;
         default:
             bubbleSort();
-            console.log("Default")
             break;
     }
-
 })
 
 //written by akhilesh
+
+
+
+

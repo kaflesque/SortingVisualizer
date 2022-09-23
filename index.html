@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
 
 </head>
-<body>
+<body >
     <section class="header">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/">Sorting algorithm Visualizer</a>
+            <a class="navbar-brand" href="https://akhilesh-kafle.github.io/SortingVisualizer">Sorting algorithm Visualizer</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -53,10 +53,42 @@
 
     <div class="popup">
       <div class="stuff">
-        <div class="title">Disclaimer</div>
+        <div class="title font-weight-bold">Disclaimer</div>
         <div class="content">This project is not completed yet.
           Some algorithms won't work!</div>
         <button id="popup">I understand</button>
+      </div>
+    </div>
+
+    <div class="wrapper"id="bubble-sort-index">
+      <div class="color-index">
+        <div class="index-title font-weight-bold text-center" style="text-decoration: underline;">Bubble Sort-colour index</div>
+        <div class="color"></div>
+        <div class="color-name" >
+         <p style="color:rgb(5, 62, 85); margin:0;font-weight: 500;">two elements are being compared and swapped</p>
+         <p style="color:green;font-weight: 500;">sorted in asscending order</p>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper"id="insertion-sort-index">
+      <div class="color-index">
+        <div class="index-title font-weight-bold text-center" style="text-decoration: underline;">Insertion Sort-colour index</div>
+        <div class="color"></div>
+        <div class="color-name" >
+         <p style="color:blue; margin:0;font-weight: 500;">two elements are being compared</p>
+         <p style="color:green;font-weight: 500;">sorted in asscending order</p>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper"id="selection-sort-index">
+      <div class="color-index">
+        <div class="index-title font-weight-bold text-center" style="text-decoration: underline;">Selection Sort-colour index</div>
+        <div class="color"></div>
+        <div class="color-name" >
+         <p style="color:blue; margin:0;font-weight: 500;">Current item</p>
+         <p style="color:red;font-weight: 500;margin:0">Minimum Value</p>
+         <p style="color:yellow;font-weight: 500;">Item to be swapped with minimum value</p>
+        </div>
       </div>
     </div>
 
